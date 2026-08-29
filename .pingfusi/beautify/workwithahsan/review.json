@@ -1,0 +1,59 @@
+{
+  "rounds": [
+    {
+      "ping_id": "2a5f3ee8-0a7c-48b2-9751-9da28f3dbeb7",
+      "draft_url": null,
+      "region": "Is this page professionally designed?",
+      "n_target": 1,
+      "approve_verdicts": [
+        "Professionally polished"
+      ],
+      "verdict_options": [
+        "Professionally polished",
+        "Needs another pass"
+      ],
+      "review_contract": null,
+      "filed_at": "2026-08-29T20:42:35.267Z",
+      "last": {
+        "status": "complete",
+        "n_received": 1,
+        "n_target": 1,
+        "result_sha256": "8a2cead0ba28e719f83c17ff59b45ca40059964298972778a66d72caf35c55b7",
+        "responses": [
+          {
+            "verdict": "Needs another pass",
+            "notes": "1 comment(s): ? — its not good. not professionally designed",
+            "steps_result": [
+              {
+                "via": "manual",
+                "done": true,
+                "text": "First impression: does this feel intentionally and professionally designed?",
+                "answer": "Still rough"
+              },
+              {
+                "via": "manual",
+                "done": true,
+                "text": "Check hierarchy, typography, spacing, alignment, color, and contrast. Pin a sticky comment or draw on every current-page region that needs a specific change.",
+                "answer": null
+              },
+              {
+                "via": null,
+                "done": false,
+                "text": "Check desktop and phone layouts, interaction states, and any motion. Note clipping, awkward wrapping, weak affordances, or distracting effects.",
+                "answer": null
+              }
+            ]
+          }
+        ],
+        "comments": [
+          {
+            "step_index": 1,
+            "text": "its not good. not professionally designed",
+            "text_sha256": "cee948028de655a82dfaa4fae1fea115ccdc82f7c814a3cd3b45ec4815c69415"
+          }
+        ]
+      },
+      "checked_at": "2026-08-29T20:42:37.241Z"
+    }
+  ]
+}
