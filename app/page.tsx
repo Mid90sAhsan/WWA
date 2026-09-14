@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { AuditForm } from "@/components/AuditForm";
 import { Dock } from "@/components/Dock";
@@ -34,6 +35,8 @@ export default function HomePage() {
               name: site.person,
               url: `${site.url}/`,
               email: `mailto:${site.email}`,
+              image: `${site.url}${site.image}`,
+              sameAs: [`https://x.com/${site.twitter}`],
               jobTitle: "Web developer and local SEO specialist",
               description:
                 "Ahsan builds fast websites and helps local businesses in the US and Canada get found on Google.",
@@ -55,6 +58,7 @@ export default function HomePage() {
               alternateName: site.name,
               url: `${site.url}/`,
               email: site.email,
+              image: `${site.url}${site.image}`,
               description:
                 "Website development and local SEO for local businesses in the US and Canada.",
               areaServed: [
@@ -94,11 +98,14 @@ export default function HomePage() {
             </div>
           </div>
           <figure className="portrait">
-            {/* AHSAN: replace the monogram with /images/ahsan.jpg — head and shoulders, well lit. */}
-            <div className="portrait__frame" role="img" aria-label="Ahsan">
-              <span className="portrait__initial" aria-hidden="true">
-                A
-              </span>
+            <div className="portrait__frame">
+              <Image
+                src={site.image}
+                alt="Ahsan"
+                width={512}
+                height={512}
+                priority
+              />
             </div>
             <figcaption>
               <span>Ahsan</span>

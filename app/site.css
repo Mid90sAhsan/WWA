@@ -277,11 +277,9 @@ h3,
 
 .portrait__frame {
   position: relative;
-  aspect-ratio: 4 / 5;
-  background:
-    linear-gradient(165deg, #314536 0%, var(--forest) 68%),
-    var(--forest);
-  border: 1px solid #1a241c;
+  aspect-ratio: 1 / 1;
+  background: var(--paper-2);
+  border: 1px solid var(--line);
   overflow: hidden;
 }
 
@@ -289,27 +287,15 @@ h3,
   content: "";
   position: absolute;
   inset: 0.85rem;
-  border: 1px solid rgba(243, 238, 228, 0.14);
+  border: 1px solid rgba(28, 25, 20, 0.1);
   pointer-events: none;
-}
-
-.portrait__initial {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  font-family: var(--serif);
-  font-size: clamp(5.5rem, 14vw, 8.5rem);
-  font-weight: 480;
-  line-height: 1;
-  letter-spacing: -0.06em;
-  color: #efe6d6;
 }
 
 .portrait img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  height: 100%;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
 }
 

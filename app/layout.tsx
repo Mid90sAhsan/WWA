@@ -44,12 +44,23 @@ export const metadata: Metadata = {
     description:
       "Fast websites and local SEO for local businesses in the US and Canada. Book a free 15-minute site audit.",
     url: "/",
+    images: [
+      {
+        url: site.image,
+        width: 512,
+        height: 512,
+        alt: site.person,
+      },
+    ],
   },
   twitter: {
     card: "summary",
+    site: `@${site.twitter}`,
+    creator: `@${site.twitter}`,
     title: site.title,
     description:
       "Fast websites and local SEO for local businesses in the US and Canada. Book a free 15-minute site audit.",
+    images: [site.image],
   },
 };
 
