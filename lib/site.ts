@@ -1,11 +1,13 @@
 export const site = {
-  name: "work with ahsan",
+  name: "Work with Ahsan",
   person: "Ahsan",
   url: "https://workwithahsan.com",
   email: "ahsan@workwithahsan.com",
   twitter: "Mid90sAhsan",
-  image: "/images/ahsan.png",
-  title: "Ahsan — Fast websites that get local businesses found on Google",
+  image: "/images/ahsan.jpg",
+  // Paste a Cal.com / Calendly link here to show a "Pick a time" button in the booking section.
+  bookingUrl: "",
+  title: "Websites & Local SEO for Local Businesses (US & Canada) — Ahsan",
   description:
-    "I build fast websites and get local businesses in the US and Canada found on Google. Book a free 15-minute site audit.",
+    "Fast websites, Google Business Profile fixes and local SEO that help local businesses in the US and Canada get found on Google. Free 15-minute site audit.",
 } as const;

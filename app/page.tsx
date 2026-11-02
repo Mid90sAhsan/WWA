@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { AuditForm } from "@/components/AuditForm";
@@ -9,6 +10,10 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { getAllNotes } from "@/lib/notes";
 import { site } from "@/lib/site";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function HomePage() {
   const notes = getAllNotes();
@@ -25,7 +30,7 @@ export default function HomePage() {
               url: `${site.url}/`,
               name: site.name,
               description:
-                "Ahsan builds fast websites and gets local businesses in the US and Canada found on Google.",
+                "Ahsan builds fast websites and helps local businesses in the US and Canada get found on Google.",
               inLanguage: "en",
               publisher: { "@id": `${site.url}/#ahsan` },
             },
@@ -52,10 +57,9 @@ export default function HomePage() {
               ],
             },
             {
-              "@type": ["LocalBusiness", "ProfessionalService"],
+              "@type": "ProfessionalService",
               "@id": `${site.url}/#business`,
-              name: site.person,
-              alternateName: site.name,
+              name: site.name,
               url: `${site.url}/`,
               email: site.email,
               image: `${site.url}${site.image}`,
@@ -88,7 +92,8 @@ export default function HomePage() {
             </h1>
             <p className="lede">
               Whether you run a contracting business, a clinic, or a local shop —
-              if your customers search “near me,” I help them find you.
+              if your customers search “near me,” I help them find you. Start
+              with a free 15-minute audit of your site and Google listing.
             </p>
             <div className="hero-actions">
               <Link className="btn" href="#book">
@@ -104,6 +109,7 @@ export default function HomePage() {
                 alt="Ahsan"
                 width={512}
                 height={512}
+                sizes="(min-width: 880px) 360px, 100vw"
                 priority
               />
             </div>
@@ -213,14 +219,20 @@ export default function HomePage() {
             <span className="section-label">Why me</span>
             <h2 id="why-title">This page is the proof.</h2>
             <p className="story">
-              I don’t have a wall of logos yet. I’m earlier than the agencies
-              that don’t return a small shop’s call — which is why I pick up,
-              keep the work honest, and treat a handful of local businesses like
-              they matter.
+              Small on purpose: you deal with me, not an account manager. I
+              pick up, keep the work honest, and treat a handful of local
+              businesses like they matter.
             </p>
             <LoadTime />
             <p className="story">
-              Notice the phone layout too. Most owners open a link from email
+              Don’t take my word for it: run{" "}
+              <a
+                href={`https://pagespeed.web.dev/analysis?url=${encodeURIComponent(site.url)}`}
+                rel="noopener"
+              >
+                Google’s PageSpeed test
+              </a>{" "}
+              on this page, then on your own site. Notice the phone layout too. Most owners open a link from email
               with one thumb. That’s the test.
             </p>
             {/* AHSAN: two or three sentences on why you do this. Optional: intro rate / how many spots. */}
@@ -273,8 +285,7 @@ export default function HomePage() {
             <span className="section-label">Plain-English notes</span>
             <h2 id="notes-title">If you want the long version first.</h2>
             <p className="story">
-              No case studies yet. These notes are how I think — written for
-              owners, not marketers.
+              These notes are how I think — written for owners, not marketers.
             </p>
             <NotesList notes={notes} />
           </section>
@@ -286,13 +297,25 @@ export default function HomePage() {
               <span className="section-label">07 / Next step</span>
               <h2 id="book-title">Book a free 15-minute site audit.</h2>
               <p>
-                Send me your site and your city. I’ll tell you, in plain English,
-                why the calls aren’t coming — and what I’d fix first.
+                Send me your site and your city. On the call, in plain English,
+                you get:
               </p>
+              <ul className="audit-list">
+                <li>How fast your site really is on a phone</li>
+                <li>Where you show up on the map for your main service</li>
+                <li>What’s missing or wrong on your Google Business Profile</li>
+                <li>The three fixes I’d make first — yours to keep, hire me or not</li>
+              </ul>
+              {site.bookingUrl && (
+                <p>
+                  <a className="btn btn--light" href={site.bookingUrl}>
+                    Pick a 15-minute time
+                  </a>
+                </p>
+              )}
               <a className="mail" href={`mailto:${site.email}`}>
                 {site.email}
               </a>
-              {/* AHSAN: add a calendar URL button and optional phone here. */}
               <p>Send the form, or write that address. That’s enough to start.</p>
             </div>
             <AuditForm />

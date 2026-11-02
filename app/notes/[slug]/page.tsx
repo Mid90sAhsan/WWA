@@ -29,9 +29,17 @@ export async function generateMetadata({
     alternates: { canonical: `/notes/${note.slug}/` },
     openGraph: {
       type: "article",
+      siteName: site.name,
       title: note.cardTitle,
       description: note.cardDescription,
       url: `/notes/${note.slug}/`,
+      images: [{ url: site.image, width: 512, height: 512, alt: site.person }],
+    },
+    twitter: {
+      card: "summary",
+      title: note.cardTitle,
+      description: note.cardDescription,
+      images: [site.image],
     },
   };
 }

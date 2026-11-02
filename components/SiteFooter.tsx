@@ -14,7 +14,7 @@ export function SiteFooter({
         </p>
         <nav className="footer-nav" aria-label="Footer">
           <Link href="/">Home</Link>
-          <Link href="/#work">Work</Link>
+          <Link href="/#work">Services</Link>
           <Link href="/notes/">Notes</Link>
           {extraLinks.map((link) => (
             <Link key={link.href} href={link.href}>
@@ -22,6 +22,7 @@ export function SiteFooter({
             </Link>
           ))}
           <Link href="/#book">Book an audit</Link>
+          <Link href="/privacy/">Privacy</Link>
         </nav>
       </div>
       <p className="fine">

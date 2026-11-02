@@ -13,7 +13,7 @@ export function SiteHeader({ home = false }: { home?: boolean }) {
           work with ahsan
         </Link>
         <nav className="nav" aria-label="Primary">
-          <Link href={workHref}>Work</Link>
+          <Link href={workHref}>Services</Link>
           <Link href="/notes/">Notes</Link>
           <Link className="btn header-cta" href={bookHref}>
             Book a free site audit

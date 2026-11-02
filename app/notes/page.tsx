@@ -4,6 +4,7 @@ import { NotesList } from "@/components/NotesList";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { getAllNotes } from "@/lib/notes";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Notes",
@@ -15,6 +16,15 @@ export const metadata: Metadata = {
     description:
       "Plain-English notes on local search, Google Maps, and getting found — for local businesses in the US and Canada.",
     url: "/notes/",
+    siteName: site.name,
+    images: [{ url: site.image, width: 512, height: 512, alt: site.person }],
+  },
+  twitter: {
+    card: "summary",
+    title: "Notes",
+    description:
+      "Plain-English notes on local search, Google Maps, and getting found — for local businesses in the US and Canada.",
+    images: [site.image],
   },
 };
 
