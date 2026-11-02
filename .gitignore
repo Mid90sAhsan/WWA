@@ -3,3 +3,6 @@ node_modules
 out
 .DS_Store
 *.log
+.wrangler
+.dev.vars
+scripts/*.local.gs

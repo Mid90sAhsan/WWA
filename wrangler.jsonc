@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "workwithahsan",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./out",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page",
+    // Every request goes through the Worker so it can redirect www and add headers.
+    "run_worker_first": true
+  },
+  "workers_dev": true,
+  "routes": [
+    { "pattern": "workwithahsan.com", "custom_domain": true },
+    { "pattern": "www.workwithahsan.com", "custom_domain": true }
+  ],
+  "observability": { "enabled": true }
+  // Secrets (set with `npx wrangler secret put <NAME>`): AUDIT_SCRIPT_URL, AUDIT_SCRIPT_SECRET
+}
