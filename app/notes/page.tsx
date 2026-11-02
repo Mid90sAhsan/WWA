@@ -4,13 +4,13 @@ import { NotesList } from "@/components/NotesList";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { getAllNotes } from "@/lib/notes";
-import { site } from "@/lib/site";
+import { feedAlternates, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Notes",
   description:
     "Plain-English notes on local search, Google Maps, and getting found — for local businesses in the US and Canada.",
-  alternates: { canonical: "/notes/" },
+  alternates: { canonical: "/notes/", ...feedAlternates },
   openGraph: {
     title: "Notes",
     description:

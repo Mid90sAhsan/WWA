@@ -9,10 +9,10 @@ import { NotesList } from "@/components/NotesList";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { getAllNotes } from "@/lib/notes";
-import { site } from "@/lib/site";
+import { feedAlternates, site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/" },
+  alternates: { canonical: "/", ...feedAlternates },
 };
 
 export default function HomePage() {

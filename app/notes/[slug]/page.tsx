@@ -7,7 +7,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { getAllNotes, getNote, getNoteSlugs } from "@/lib/notes";
-import { site } from "@/lib/site";
+import { feedAlternates, site } from "@/lib/site";
 
 type Params = { slug: string };
 
@@ -26,7 +26,7 @@ export async function generateMetadata({
   return {
     title: note.title,
     description: note.description,
-    alternates: { canonical: `/notes/${note.slug}/` },
+    alternates: { canonical: `/notes/${note.slug}/`, ...feedAlternates },
     openGraph: {
       type: "article",
       siteName: site.name,

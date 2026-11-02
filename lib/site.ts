@@ -11,3 +11,8 @@ export const site = {
   description:
     "Fast websites, Google Business Profile fixes and local SEO that help local businesses in the US and Canada get found on Google. Free 15-minute site audit.",
 } as const;
+
+// Spread into a page's `alternates` so browsers and readers can discover the RSS feed.
+export const feedAlternates = {
+  types: { "application/rss+xml": [{ url: "/notes/feed.xml", title: "Notes — Work with Ahsan" }] },
+};
