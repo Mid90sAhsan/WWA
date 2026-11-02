@@ -2,7 +2,12 @@
 
 Working outlines for upcoming notes. They follow the house style of the published notes: plain English, written for owners in the US and Canada, no ranking promises, a short list of steps to take this week, and an ending that links to related notes and the [free audit](/#book).
 
-Suggested order: start with 1 and 2, since owners ask those most often and they link back to the two notes already published. Aim for one note every two weeks.
+Suggested order: 1, then 2. Aim for one note every two weeks.
+
+**Keyword research (OpenSEO, US, Nov 2026).** Monthly volume / difficulty (0–100):
+- Published from this research: verification (`google business profile verification` 2,900 / 9), review link (`google review link` 8,100 / 27, `how to ask for google reviews` 480 / 7), reviews disappeared (`google reviews disappeared` 260 / 4), suspended (`google business profile suspended` 320 / 4), change address (`how to change business address on google` 880 / 12).
+- Still open: `service area business` 260 / 9, `google business profile posts` 320 / 23, `google business profile categories` 140 / 22, `how to add manager to google business profile` 140 / 2, `nap consistency` 210 / 8, `local seo for small business` 1,300 / 21.
+- Low demand as phrased: `do i need a website for my business` 70, `how long for google business profile to show up` 20. Worth writing for clients, not for search traffic.
 
 When one is ready, save it as `content/notes/<slug>.mdx` with the usual frontmatter (`title`, `cardTitle`, `description`, `cardDescription`, `kicker`, `byline`, `date`). It will show up on `/notes/`, in the sitemap, and in the RSS feed on its own.
 
@@ -52,21 +57,7 @@ When one is ready, save it as `content/notes/<slug>.mdx` with the usual frontmat
 - **On the website:** a page or section for each area you really cover. No thin “plumber in [city]” pages copied 40 times.
 - **Risk callout:** a wrong setting is a common cause of suspension. Link to the maps note, reason 2.
 
-## 4. Why did my Google reviews disappear?
-
-- **Slug:** `reviews-disappeared`
-- **Card title:** Where did your reviews go?
-- **Searcher’s question:** “I had 38 reviews yesterday and 31 today.”
-
-**Sections**
-- **First, don’t panic:** reviews sometimes vanish for a while, then come back.
-- **The usual reasons:** Google’s spam filter catches reviews sent from one place or posted in a burst, review-gating or incentives, the reviewer deleted their account, a profile merge or duplicate, or a suspension.
-- **What you can and can’t do:** appeal through Google’s review management tool. You can’t get filtered reviews restored on demand.
-- **How to ask for reviews so they stick:** ask everyone, not just happy customers, spread requests out over time, send a direct link, and never pay or offer discounts.
-- **Replying to reviews:** short and specific. Reply to bad reviews calmly, because future customers read the reply more than the review.
-- **What I would do this week:** a checklist.
-
-## 5. What a “free SEO audit” email is really offering
+## 4. What a “free SEO audit” email is really offering
 
 - **Slug:** `seo-spam-emails`
 - **Card title:** That “your site has 47 errors” email
@@ -85,7 +76,9 @@ When one is ready, save it as `content/notes/<slug>.mdx` with the usual frontmat
 
 ## Later
 
-- Google Business Profile posts: are they worth the time?
+- Google Business Profile posts: are they worth the time? (320 / 23)
+- Adding a manager to your Google profile, and why every business needs two owners (140 / 2)
+- Local SEO for small businesses: the honest version (1,300 / 21)
 - Choosing your primary category (a deeper version of reason 4 in the maps note).
 - What a fast website actually means, and how to check yours on a phone.
 - Moving locations without losing your Maps spot.
