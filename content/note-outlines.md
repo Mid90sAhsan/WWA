@@ -5,8 +5,8 @@ Working outlines for upcoming notes. They follow the house style of the publishe
 Suggested order: 1, then 2. Aim for one note every two weeks.
 
 **Keyword research (OpenSEO, US, Nov 2026).** Monthly volume / difficulty (0–100):
-- Published from this research: verification (`google business profile verification` 2,900 / 9), review link (`google review link` 8,100 / 27, `how to ask for google reviews` 480 / 7), reviews disappeared (`google reviews disappeared` 260 / 4), suspended (`google business profile suspended` 320 / 4), change address (`how to change business address on google` 880 / 12).
-- Still open: `service area business` 260 / 9, `google business profile posts` 320 / 23, `google business profile categories` 140 / 22, `how to add manager to google business profile` 140 / 2, `nap consistency` 210 / 8, `local seo for small business` 1,300 / 21.
+- Published from this research: verification (`google business profile verification` 2,900 / 9), review link (`google review link` 8,100 / 27, `how to ask for google reviews` 480 / 7), reviews disappeared (`google reviews disappeared` 260 / 4), suspended (`google business profile suspended` 320 / 4), change address (`how to change business address on google` 880 / 12), service area (`service area business` 260 / 9, `google my business service area` 90 / 23, `google business profile without address` 40 / 1).
+- Still open: `google business profile posts` 320 / 23, `google business profile categories` 140 / 22, `how to add manager to google business profile` 140 / 2, `nap consistency` 210 / 8, `local seo for small business` 1,300 / 21.
 - Low demand as phrased: `do i need a website for my business` 70, `how long for google business profile to show up` 20. Worth writing for clients, not for search traffic.
 
 When one is ready, save it as `content/notes/<slug>.mdx` with the usual frontmatter (`title`, `cardTitle`, `description`, `cardDescription`, `kicker`, `byline`, `date`). It will show up on `/notes/`, in the sitemap, and in the RSS feed on its own.
@@ -42,7 +42,7 @@ When one is ready, save it as `content/notes/<slug>.mdx` with the usual frontmat
 - **How to check without fooling yourself:** search from a phone while standing near the business, use a private window, and ask a customer to search for you.
 - **What I would do this week:** a checklist.
 
-## 3. Service-area business vs. storefront: which should you be on Google?
+## 3. Service-area business vs. storefront: which should you be on Google? (published as `service-area-business`)
 
 - **Slug:** `service-area-vs-storefront`
 - **Card title:** Storefront or service area?
