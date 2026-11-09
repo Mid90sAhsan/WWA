@@ -1,7 +1,10 @@
 // Cloudflare Worker: serves the static Next.js export from ./out, redirects
-// www to the apex, adds security/cache headers, and handles the audit form.
+// www to the apex, adds security/cache headers, and handles the audit form
+// and the notes API (worker/notes-api.ts).
 
-interface Env {
+import { handleNotesApi, type NotesEnv } from "./notes-api";
+
+interface Env extends NotesEnv {
   ASSETS: { fetch(request: Request): Promise<Response> };
   AUDIT_SCRIPT_URL?: string;
   AUDIT_SCRIPT_SECRET?: string;
@@ -33,7 +36,9 @@ export default {
         ? request.method === "POST"
           ? await handleAudit(request, env)
           : Response.json({ ok: false }, { status: 405, headers: { Allow: "POST" } })
-        : await env.ASSETS.fetch(request);
+        : url.pathname === "/api/notes" || url.pathname.startsWith("/api/notes/")
+          ? await handleNotesApi(request, env, url.pathname)
+          : await env.ASSETS.fetch(request);
 
     return withHeaders(response, url.pathname);
   },

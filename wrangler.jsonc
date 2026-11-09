@@ -16,6 +16,9 @@
     { "pattern": "workwithahsan.com", "custom_domain": true },
     { "pattern": "www.workwithahsan.com", "custom_domain": true }
   ],
-  "observability": { "enabled": true }
-  // Secrets (set with `npx wrangler secret put <NAME>`): AUDIT_SCRIPT_URL, AUDIT_SCRIPT_SECRET
+  "observability": { "enabled": true },
+  // Where the notes API commits new notes.
+  "vars": { "GITHUB_REPO": "Mid90sAhsan/WWA", "GITHUB_BRANCH": "main" }
+  // Secrets (set with `npx wrangler secret put <NAME>`): AUDIT_SCRIPT_URL, AUDIT_SCRIPT_SECRET,
+  // NOTES_API_TOKEN (the bot's bearer token), GITHUB_TOKEN (fine-grained, Contents read/write on the repo)
 }
