@@ -15,6 +15,7 @@ export function SiteFooter({
         <nav className="footer-nav" aria-label="Footer">
           <Link href="/">Home</Link>
           <Link href="/#work">Services</Link>
+          <Link href="/services/suspension-help/">Suspension help</Link>
           <Link href="/notes/">Notes</Link>
           {extraLinks.map((link) => (
             <Link key={link.href} href={link.href}>

@@ -180,7 +180,12 @@ export default function HomePage() {
                 <h3>A Google profile that puts you on the map</h3>
                 <p>
                   Hours, photos, categories, the pin. That’s how you show up in
-                  the map pack when someone searches nearby.
+                  the map pack when someone searches nearby. Profile
+                  suspended?{" "}
+                  <Link href="/services/suspension-help/">
+                    I can help get it back
+                  </Link>
+                  .
                 </p>
               </li>
               <li>
