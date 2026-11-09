@@ -593,6 +593,7 @@ h3,
   color: inherit;
 }
 
+.notes-list h2,
 .notes-list h3 {
   margin: 0 0 0.4rem;
   font-size: 1.3rem;

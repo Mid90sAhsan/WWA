@@ -46,6 +46,11 @@ function withHeaders(response: Response, pathname: string) {
     out.headers.set("Cache-Control", "public, max-age=31536000, immutable");
   } else if (pathname.startsWith("/images/")) {
     out.headers.set("Cache-Control", "public, max-age=604800, stale-while-revalidate=86400");
+  } else if (pathname.endsWith("/opengraph-image") && response.ok) {
+    // Next exports social images without a file extension, so the asset
+    // server can't infer the type.
+    out.headers.set("Content-Type", "image/png");
+    out.headers.set("Cache-Control", "public, max-age=86400");
   }
   return out;
 }

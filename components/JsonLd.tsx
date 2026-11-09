@@ -6,3 +6,15 @@ export function JsonLd({ data }: { data: Record<string, unknown> }) {
     />
   );
 }
+
+export function breadcrumbs(items: { name: string; url: string }[]) {
+  return {
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+}

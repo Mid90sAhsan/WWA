@@ -5,12 +5,15 @@ import matter from "gray-matter";
 export type NoteMeta = {
   slug: string;
   title: string;
+  // Shorter title for the browser tab and search results; falls back to `title`.
+  seoTitle: string;
   cardTitle: string;
   description: string;
   cardDescription: string;
   kicker: string;
   byline: string;
   date: string;
+  updated: string;
 };
 
 export type Note = NoteMeta & { content: string };
@@ -24,12 +27,14 @@ function parseNote(slug: string): Note {
   return {
     slug,
     title: String(data.title),
+    seoTitle: String(data.seoTitle ?? data.title),
     cardTitle: String(data.cardTitle ?? data.title),
     description: String(data.description),
     cardDescription: String(data.cardDescription ?? data.description),
     kicker: String(data.kicker ?? "A note for local business owners"),
     byline: String(data.byline ?? "Ahsan"),
     date: String(data.date),
+    updated: String(data.updated ?? data.date),
     content,
   };
 }

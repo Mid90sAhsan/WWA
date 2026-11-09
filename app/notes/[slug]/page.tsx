@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { Dock } from "@/components/Dock";
-import { JsonLd } from "@/components/JsonLd";
+import { JsonLd, breadcrumbs } from "@/components/JsonLd";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { getAllNotes, getNote, getNoteSlugs } from "@/lib/notes";
@@ -24,7 +24,7 @@ export async function generateMetadata({
   if (!getNoteSlugs().includes(slug)) return {};
   const note = getNote(slug);
   return {
-    title: note.title,
+    title: note.seoTitle,
     description: note.description,
     alternates: { canonical: `/notes/${note.slug}/`, ...feedAlternates },
     openGraph: {
@@ -33,13 +33,15 @@ export async function generateMetadata({
       title: note.cardTitle,
       description: note.cardDescription,
       url: `/notes/${note.slug}/`,
-      images: [{ url: site.image, width: 512, height: 512, alt: site.person }],
+      publishedTime: note.date,
+      modifiedTime: note.updated,
+      authors: [site.person],
     },
+    // The image comes from opengraph-image.tsx; Twitter falls back to it.
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title: note.cardTitle,
       description: note.cardDescription,
-      images: [site.image],
     },
   };
 }
@@ -60,22 +62,33 @@ export default async function NotePage({
       <JsonLd
         data={{
           "@context": "https://schema.org",
-          "@type": "Article",
-          headline: note.title,
-          description: note.description,
-          datePublished: note.date,
-          author: {
-            "@type": "Person",
-            name: site.person,
-            url: `${site.url}/`,
-          },
-          publisher: {
-            "@type": "Person",
-            name: site.person,
-            url: `${site.url}/`,
-          },
-          mainEntityOfPage: `${site.url}/notes/${note.slug}/`,
-          inLanguage: "en",
+          "@graph": [
+            {
+              "@type": "Article",
+              headline: note.title,
+              description: note.description,
+              image: `${site.url}/notes/${note.slug}/opengraph-image`,
+              datePublished: note.date,
+              dateModified: note.updated,
+              author: {
+                "@type": "Person",
+                name: site.person,
+                url: `${site.url}/`,
+              },
+              publisher: {
+                "@type": "Person",
+                name: site.person,
+                url: `${site.url}/`,
+              },
+              mainEntityOfPage: `${site.url}/notes/${note.slug}/`,
+              inLanguage: "en",
+            },
+            breadcrumbs([
+              { name: "Home", url: `${site.url}/` },
+              { name: "Notes", url: `${site.url}/notes/` },
+              { name: note.cardTitle, url: `${site.url}/notes/${note.slug}/` },
+            ]),
+          ],
         }}
       />
       <SiteHeader />
