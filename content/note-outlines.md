@@ -2,14 +2,26 @@
 
 Working outlines for upcoming notes. They follow the house style of the published notes: plain English, written for owners in the US and Canada, no ranking promises, a short list of steps to take this week, and an ending that links to related notes and the [free audit](/#book).
 
-Suggested order: 1, then 2. Aim for one note every two weeks.
+Suggested order: 1, then 2.
 
 **Keyword research (OpenSEO, US, Nov 2026).** Monthly volume / difficulty (0–100):
 - Published from this research: verification (`google business profile verification` 2,900 / 9), review link (`google review link` 8,100 / 27, `how to ask for google reviews` 480 / 7), reviews disappeared (`google reviews disappeared` 260 / 4), suspended (`google business profile suspended` 320 / 4), change address (`how to change business address on google` 880 / 12), service area (`service area business` 260 / 9, `google my business service area` 90 / 23, `google business profile without address` 40 / 1).
 - Still open: `google business profile posts` 320 / 23, `google business profile categories` 140 / 22, `how to add manager to google business profile` 140 / 2, `nap consistency` 210 / 8, `local seo for small business` 1,300 / 21.
 - Low demand as phrased: `do i need a website for my business` 70, `how long for google business profile to show up` 20. Worth writing for clients, not for search traffic.
 
-When one is ready, save it as `content/notes/<slug>.mdx` with the usual frontmatter (`title`, `cardTitle`, `description`, `cardDescription`, `kicker`, `byline`, `date`). It will show up on `/notes/`, in the sitemap, and in the RSS feed on its own.
+When one is ready, save it as `content/notes/<slug>.mdx` with the usual frontmatter (`title`, `seoTitle` if the title is long, `cardTitle`, `description`, `cardDescription`, `kicker`, `byline`, `date`). It will show up on `/notes/`, in the sitemap, and in the RSS feed on its own.
+
+## Publishing schedule: Monday, Wednesday, Friday
+
+Notes are queued by date. A note whose `date` is in the future stays off the live site, out of the sitemap and out of the feed. The GitHub Action in `.github/workflows/deploy.yml` rebuilds and deploys at 13:00 UTC (8am Eastern in winter, 9am in summer) every Monday, Wednesday and Friday, so each note goes live on its date.
+
+To queue a note:
+
+1. Give it a Monday, Wednesday or Friday `date`, in quotes: `date: "2026-11-16"`.
+2. Commit it and push to `main`. It has to be on GitHub for the scheduled deploy to pick it up.
+3. Preview it with `npm run dev`. Dev shows queued notes; production builds don't.
+
+Don't link to a queued note from a published one until its date has passed, or the link will 404 until then. To publish something right away, give it today's date and run `npm run deploy`, or run the Deploy workflow by hand from the Actions tab.
 
 ---
 
